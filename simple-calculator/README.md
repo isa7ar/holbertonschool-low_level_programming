@@ -1,19 +1,46 @@
+
 # Simple Calculator
 
-A terminal-based calculator project written in C.
+A terminal-based interactive calculator written in C.
 
 ## Compilation
+
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 calculator.c -o calculator
 
 ## Run
+
 ./calculator
 
-## Operations
-Addition, subtraction, multiplication, and division are planned.
+## Supported Operations
+
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+0. Quit
 
 ## Numeric Behavior
-The menu accepts integer choices. Arithmetic operands will be implemented in later tasks.
 
-## Limitations
-Currently, the program displays a menu and supports quitting with option 0.
-Arithmetic operations are not implemented yet.
+The calculator uses double-precision floating-point numbers.
+
+It supports integers and decimal operands.
+
+Results are displayed using the %g format.
+
+## Input
+
+Menu choices are integers from 0 to 4.
+Operands are read using scanf.
+
+## Error Handling
+
+Invalid menu numbers display "Invalid choice".
+
+Division by zero displays "Error: division by zero".
+
+## Known Limitations
+
+Non-numeric input is not handled with full recovery.
+
+Floating-point calculations may have rounding limitations.
+

@@ -9,8 +9,8 @@
 int main(void)
 {
 	int choice;
-	int a;
-	int b;
+	double a;
+	double b;
 
 	while (1)
 	{
@@ -22,7 +22,8 @@ int main(void)
 		printf("0) Quit\n");
 		printf("Choice: ");
 
-		scanf("%d", &choice);
+		if (scanf("%d", &choice) != 1)
+			break;
 
 		if (choice == 0)
 		{
@@ -33,36 +34,29 @@ int main(void)
 		if (choice < 0 || choice > 4)
 		{
 			printf("Invalid choice\n");
+			continue;
 		}
-		else if (choice == 1)
-		{
-			printf("A: ");
-			scanf("%d", &a);
 
-			printf("B: ");
-			scanf("%d", &b);
+		printf("A: ");
+		if (scanf("%lf", &a) != 1)
+			break;
 
-			printf("Result: %d\n", a + b);
-		}
+		printf("B: ");
+		if (scanf("%lf", &b) != 1)
+			break;
+
+		if (choice == 1)
+			printf("Result: %g\n", a + b);
 		else if (choice == 2)
-		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			printf("Result: %d\n", a - b);
-		}
+			printf("Result: %g\n", a - b);
 		else if (choice == 3)
+			printf("Result: %g\n", a * b);
+		else if (choice == 4)
 		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			printf("Result: %d\n", a * b);
+			if (b == 0)
+				printf("Error: division by zero\n");
+			else
+				printf("Result: %g\n", a / b);
 		}
 	}
 
