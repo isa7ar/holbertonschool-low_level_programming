@@ -1,6 +1,11 @@
 
 #include <stdio.h>
 
+/**
+ * main - runs the simple calculator
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
 	int choice;
@@ -39,10 +44,19 @@ int main(void)
 
 			printf("Result: %d\n", a + b);
 		}
+		else if (choice == 2)
+		{
+			printf("A: ");
+			scanf("%d", &a);
+
+			printf("B: ");
+			scanf("%d", &b);
+
+			printf("Result: %d\n", a - b);
+		}
 	}
 
 	return (0);
 }
-
 
 
